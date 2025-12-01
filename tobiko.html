@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobiko | Original Character</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #8e44ad; 
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --sidebar-width: 300px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: #fff;
+            padding: 2rem;
+            position: fixed;
+            height: 100%;
+            border-right: 1px solid #ddd;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid var(--bg-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .sidebar h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .sidebar p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 3rem 4rem;
+            flex: 1;
+            max-width: 900px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        /* Large Character Sheet Image */
+        .char-sheet-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            border: 1px solid #ddd;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-box {
+            background: var(--bg-color);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Pinterest-Style Gallery Layout */
+        .gallery-grid {
+            column-count: 2; /* Creates 2 columns like a newspaper/Pinterest */
+            column-gap: 1.5rem;
+        }
+
+        .gallery-item {
+            display: inline-block; /* Prevents images from splitting across columns */
+            width: 100%;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .caption {
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #555;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        /* Fan Art Box */
+        .fan-art-box {
+            background-color: #f3e5f5;
+            border: 2px dashed var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 10px 20px;
+            background-color: #95a5a6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .back-btn:hover { background-color: #7f8c8d; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar {
+                width: auto;
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+            .main-content { margin-left: 0; padding: 1.5rem; }
+            .gallery-grid { column-count: 1; } /* 1 column on mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <img src="tobiko_profile.jpg" alt="Tobiko Portrait" class="profile-img">
+        <h1>Tobiko</h1>
+        <p>Original Character (OC)</p>
+        
+        <div style="text-align: left; margin-top: 20px; font-size: 0.9rem;">
+            <p><strong>Designed by:</strong> Dafei</p>
+            <p><strong>Created:</strong> Nov. 8, 2008</p>
+        </div>
+
+        <a href="index.html" class="back-btn">&larr; Back to Dafei's Profile</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Large Sheet -->
+        <section>
+            <h2>Design Sheet</h2>
+            <img src="tobiko.jpg" alt="Tobiko Full Design Sheet" class="char-sheet-img">
+            <p style="text-align: center; color: #666; font-style: italic;">Full character design reference sheet (2024)</p>
+        </section>
+
+        <!-- Stats -->
+        <section>
+            <h2>Character Profile</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-label">Role</div>
+                    <div class="stat-value">Cyber Space Maid</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Height</div>
+                    <div class="stat-value">145 cm</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Birthday</div>
+                    <div class="stat-value">November 8th</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Origin</div>
+                    <div class="stat-value">Designed in 2008</div>
+                </div>
+            </div>
+
+            <h3>Personality</h3>
+            <p>
+                Tobiko is a maid who resides within cyber space. She possesses a very distinct and somewhat contradictory personality. 
+                While she is exceptionally kind, polite, and helpful to strangers and the general public, she treats her creator, Dafei, quite differently. 
+                She is known to be sharp-tongued, impolite, and often "talks bad" to him—a unique quirk of their creator-creation relationship.
+            </p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section>
+            <h2>Art Styles & Costumes</h2>
+            <p>Tobiko is not bound to a single appearance. As a digital entity, she often changes her style depending on the situation in cyber space.</p>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="tobiko_magica.jpg" alt="Tobiko Magica Style">
+                    <div class="caption">Magica / Gothic Style</div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="tobiko_zelda.jpg" alt="Tobiko Zelda Style">
+                    <div class="caption">Adventure Style</div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="tobiko_google.jpg" alt="Tobiko Google Doodle Style">
+                    <div class="caption">Corporate Memphis / Doodle Style</div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="tobiko_chibi.png" alt="Tobiko Chibi Style">
+                    <div class="caption">Chibi / SD Form</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fan Art -->
+        <section>
+            <h2>Fan Art Guidelines</h2>
+            <div class="fan-art-box">
+                <h3>🎨 Create & Share!</h3>
+                <p>
+                    I welcome and encourage fan art of Tobiko! It brings me great joy to see her interpreted in different styles.
+                </p>
+                <p>
+                    <strong>If you draw Tobiko, please send it to me!</strong><br>
+                    I would be incredibly happy to see your work.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
