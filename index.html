@@ -1,35 +1,436 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dafei Shih | Researcher & Developer</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --sidebar-width: 300px;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
+            display: flex;
+            min-height: 100vh;
         }
-        .card {
-            background: white;
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: #fff;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: fixed;
+            height: 100%;
+            border-right: 1px solid #ddd;
             text-align: center;
-            max-width: 400px;
+            overflow-y: auto;
         }
-        h1 { color: #2c3e50; }
-        .success-icon { font-size: 50px; color: #27ae60; }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid var(--bg-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .sidebar h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .sidebar p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            font-size: 0.85rem;
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .contact-info div {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 3rem 4rem;
+            flex: 1;
+            max-width: 900px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            margin-bottom: 0.2rem;
+            color: #2c3e50;
+        }
+        
+        h4 {
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-size: 1.1rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .job-meta {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .publication-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .publication-item {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid #eee;
+            font-size: 0.95rem;
+        }
+        
+        .publication-item strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Creative Link Button */
+        .creative-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 10px 20px;
+            background-color: #e67e22;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .creative-link:hover {
+            transform: scale(1.05);
+            background-color: #d35400;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: auto;
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="success-icon">✔</div>
-        <h1>It Works!</h1>
-        <p>You have successfully hosted this HTML file on GitHub Pages.</p>
-    </div>
+
+    <!-- Sidebar Profile -->
+    <aside class="sidebar">
+        <!-- Make sure to name your image file 'profile.jpg' and place it in the same folder -->
+        <img src="profile.jpg" alt="Dafei Shih" class="profile-img">
+        <h1>Dafei Shih</h1>
+        <p>Ph.D. Researcher & Developer</p>
+        
+        <div style="text-align: left; margin-top: 20px;">
+            <p>Innovative researcher with a strong background in computational photography and display technologies.</p>
+        </div>
+
+        <div class="contact-info">
+            <div>📍 Taipei, Taiwan</div>
+            <div>📧 shihkt@gmail.com</div>
+            <div>📞 +886 932-911077</div>
+        </div>
+
+        <!-- Link to Tobiko Page -->
+        <a href="tobiko.html" class="creative-link">🔥 Meet Tobiko (OC)</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Experience -->
+        <section>
+            <h2>Experience</h2>
+            
+            <div class="job">
+                <h3>Software Engineer</h3>
+                <div class="job-meta">Google Inc. | Mar. 2025 – Present</div>
+                <p>Develops cutting edge computational photography system and algorithms for the Pixel phone.</p>
+                <ul>
+                    <li><strong>WYSIWYG Preview:</strong> Optimize the computation flow and parameters throughout the imaging pipeline to align the appearance between camera preview and the final processed image.</li>
+                </ul>
+            </div>
+
+            <div class="job" style="margin-top: 2rem;">
+                <h3>Co-Founder and Representative</h3>
+                <div class="job-meta">PetaRay Inc. | Oct 2020 – Jun 2024</div>
+                <p>Led a team of highly talented engineers to design near-eye light field display. Responsible for roadmap planning, product development, and prototyping.</p>
+                <ul>
+                    <li><strong>Light Field Projector:</strong> Designed miniaturized light field projection engine with injection molded lenses. A prototype less than 6 grams in weight and 20 mm in TTL was built and tested.</li>
+                    <li><strong>Light Field Waveguides:</strong> Designed a novel optical waveguide compatible with PetaRay’s light field projection engine. A proof-of-concept level prototype was built for verification.</li>
+                    <li><strong>Calibration Scheme:</strong> Identified key image quality indices for light field projection engine and designed standard calibration scheme.</li>
+                </ul>
+            </div>
+
+            <div class="job" style="margin-top: 2rem;">
+                <h3>Post Doctoral Researcher</h3>
+                <div class="job-meta">National Taiwan University | Oct 2017 – Oct 2020</div>
+                <p>Worked on various research projects in computational photography and display. Responsible for all stages of research from idea forming, testing, prototyping, to technical writing.</p>
+                <ul>
+                    <li><strong>Color Preserving Blue Light Filtering (SIGGRAPH Asia 2016):</strong> Designed a method reducing harmful blue light (>80% reduction) with minimal color distortion (Delta E < 2.1) by optical filtering and computation.</li>
+                    <li><strong>Computational Camera Array (IEEE TCI):</strong> Designed a novel camera array for ultra-high-resolution imaging and depth acquisition using heterogeneous focal lengths and custom image fusion algorithms.</li>
+                    <li><strong>Near-Eye Light Field Display:</strong> Designed a novel AR/VR optical engine structure free from the vergence accommodation conflict. Licensed to spin-off company PetaRay.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education</h2>
+            <div class="job">
+                <h3>Ph.D., Graduate Institute of Communication Engineering</h3>
+                <div class="job-meta">National Taiwan University | Sep 2009 – Jun 2017</div>
+                <p>Advisor: Homer Chen</p>
+            </div>
+            <div class="job" style="margin-top: 1rem;">
+                <h3>B.S., Department of Electrical Engineering</h3>
+                <div class="job-meta">National Taiwan University | Sep 2005 – Jun 2009</div>
+                <p>Minor: Mathematics</p>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section>
+            <h2>Publications</h2>
+            
+            <h4>Doctoral Dissertation</h4>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <strong>High-Resolution Imaging and Depth Acquisition Using a Camera Array</strong>
+                    K.-T. Shih, Ph.D. dissertation, National Taiwan University, Taipei, Taiwan, Jul. 2017.
+                </div>
+            </div>
+
+            <h4>Journal Papers</h4>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <strong>Geometric lightguide for near-eye light field display</strong>
+                    S.-N. Chen, L.-W. Fu, J.-W. Huang, K.-T. Shih, and H. H. Chen, Applied Optics, vol. 63, no. 6, pp. 1457–1470, Feb. 2024.
+                </div>
+                <div class="publication-item">
+                    <strong>Efficient and accurate stitching for 360° dual-fisheye images and videos</strong>
+                    I-C. Lo, K.-T. Shih, and H. H. Chen, IEEE Trans. Image Process., vol. 31, pp. 251-262, Jan. 2022.
+                </div>
+                <div class="publication-item">
+                    <strong>Enhancement and speedup of photometric compensation for projectors...</strong>
+                    K.-T. Shih, J.-S. Liu, F. Shyu, and H. H. Chen, IEEE Trans. Image Process., vol. 30, pp. 418-430, 2021.
+                </div>
+                <div class="publication-item">
+                    <strong>Light field synthesis by training deep network in the refocused image domain</strong>
+                    C.-L. Liu, K.-T. Shih, J.-W. Huang, and H. H. Chen, IEEE Trans. Image Process., vol. 29, pp. 6630-6640, 2020.
+                </div>
+                <div class="publication-item">
+                    <strong>The modulation of background color on perceiving audiovisual simultaneity</strong>
+                    S.-E. Chien et al., Vision Research, 2020.
+                </div>
+                <div class="publication-item">
+                    <strong>Generating high-resolution image and depth map using a camera array...</strong>
+                    K.-T. Shih and H. H. Chen, IEEE Transactions on Computational Imaging, vol. 5, no. 1, pp. 68–81, Mar. 2019.
+                </div>
+                <div class="publication-item">
+                    <strong>Analysis of disparity error for autofocus</strong>
+                    C.-C. Yang, S.-K. Huang, K.-T. Shih, and H. H. Chen, IEEE Trans. Image Process., vol. 27, no. 4, pp. 1575-1585, Apr. 2018.
+                </div>
+                <div class="publication-item">
+                    <strong>Blocking harmful blue light while preserving image color appearance</strong>
+                    K.-T. Shih et al., ACM Trans. Graph. (Proc. ACM SIGGRAPH Asia 2016), vol. 35, no. 6, pp. 1–10, Aug. 2016.
+                </div>
+                <div class="publication-item">
+                    <strong>Exploiting perceptual anchoring for color image enhancement</strong>
+                    K.-T. Shih and H. H. Chen, IEEE Trans. Multimedia, vol. 18, no. 2, pp. 300–310, Feb. 2016.
+                </div>
+                <div class="publication-item">
+                    <strong>Enhancement of backlight-scaled images</strong>
+                    T.-H. Huang, K.-T. Shih, S.-L. Yeh, and H. H. Chen, IEEE Trans. Image Process., vol. 22, no. 12, Dec. 2013.
+                </div>
+                <div class="publication-item">
+                    <strong>Single image realism assessment and recoloring by color compatibility</strong>
+                    B.-Y. Wong, K.-T. Shih, C.-K. Liang, and H. H. Chen, IEEE Trans. Multimedia, vol. 14, no. 3, Jun. 2012.
+                </div>
+            </div>
+
+            <h4>Conference Papers</h4>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <strong>Geometric waveguide optimization for ghosting reduction in near-eye light field display</strong>
+                    S.-N. Chen et al., SPIE AR | VR | MR, Jan. 2024.
+                </div>
+                <div class="publication-item">
+                    <strong>A novel birdbath eyepiece for light field AR glasses</strong>
+                    C.-C. Wu, K.-T. Shih, J.-W. Huang, and H. H. Chen, SPIE AR|VR|MR, Jan. 2023.
+                </div>
+                <div class="publication-item">
+                    <strong>Unsupervised learning of 3D object reconstruction with small dataset</strong>
+                    S.-L. Chen, K.-T. Shih, and H. H. Chen, IEEE Int. Conf. Artificial Intelligence Virtual Reality, Nov. 2021.
+                </div>
+                <div class="publication-item">
+                    <strong>Speeding up light field synthesis from stereo images</strong>
+                    Y.-C. Chen et al., IEEE Int. Conf. Artificial Intelligence Virtual Reality, Nov. 2021.
+                </div>
+                <div class="publication-item">
+                    <strong>Computational ultra-high-resolution imaging by fusing mixed-focal-length images</strong>
+                    K.-T. Shih and H. H. Chen, Photonics West, Mar. 2021.
+                </div>
+                <div class="publication-item">
+                    <strong>Photometric consistency for dual fisheye cameras</strong>
+                    I-C. Lo, K.-T. Shih, G.-H. Ju, and H. H. Chen, IEEE Int. Conf. Image Process., Oct. 2020.
+                </div>
+                <div class="publication-item">
+                    <strong>Seamless stitching dual fisheye images for 360° free view</strong>
+                    I.-C. Lo et al., IEEE Int. Conf. Image Process., Sept. 2019.
+                </div>
+                <div class="publication-item">
+                    <strong>360° video stitching for dual fisheye cameras</strong>
+                    I.-C. Lo, K.-T. Shih, and H. H. Chen, IEEE Int. Conf. Image Process., Sept. 2019.
+                </div>
+                <div class="publication-item">
+                    <strong>Image stitching for dual fisheye cameras</strong>
+                    I.-C. Lo, K.-T. Shih, and H. H. Chen, IEEE Int. Conf. Image Process., Oct. 2018.
+                </div>
+                <div class="publication-item">
+                    <strong>Depth from gaze</strong>
+                    T.-S. Kuo, K.-T. Shih, S.-L. Chung, and H. H. Chen, IEEE Int. Conf. Image Process., Oct. 2018.
+                </div>
+                <div class="publication-item">
+                    <strong>Effect of background color on audiovisual simultaneity perception</strong>
+                    S.-E. Chien et al., The European Conference on Visual Perception, Aug. 2018.
+                </div>
+                <div class="publication-item">
+                    <strong>Occlusion-and-edge-aware depth estimation from stereo images...</strong>
+                    H.-Y. Chou, K.-T. Shih, and H. H. Chen, IEEE ICME Workshop on Hot Topics in 3D Multimedia, Jul. 2018.
+                </div>
+                <div class="publication-item">
+                    <strong>Dehazing with a see-through near-eye display (Best Demo Paper)</strong>
+                    K.-T. Shih, K.-E. Lin, and H. H. Chen, IEEE Int. Conf. Multimedia Expo, Jul. 2018.
+                </div>
+                <div class="publication-item">
+                    <strong>Performance analysis of reconstruction-based super-resolution for camera arrays</strong>
+                    K.-T. Shih and H. H. Chen, IEEE Int. Conf. Image Process. (ICIP), Sept. 2017.
+                </div>
+                <div class="publication-item">
+                    <strong>Enhancing the perception of a hazy visual world using a see-through head-mounted device</strong>
+                    K.-E. Lin, K.-T. Shih, and H. H. Chen, IEEE Int. Conf. Image Process. (ICIP), Sept. 2017.
+                </div>
+                <div class="publication-item">
+                    <strong>Dual-camera HDR synthesis guided by long-exposure image</strong>
+                    P.-J. Wu, K.-T. Shih, and H. H. Chen, APSIPA Annual Conf., Dec. 2016.
+                </div>
+                <div class="publication-item">
+                    <strong>Using disparity information for stereo autofocus in 3-D photography</strong>
+                    S.-K. Huang, C.-C. Yang, K.-T. Shih, and H. H. Chen, Electronic Imaging, Feb. 2016.
+                </div>
+                <div class="publication-item">
+                    <strong>Preserving image color appearance on non-white projection surfaces (Best Demo Award)</strong>
+                    J.-S. Liu, K.-T. Shih, and H. H. Chen, IEEE Int. Conf. Multimedia Expo, Jul. 2015.
+                </div>
+                <div class="publication-item">
+                    <strong>Preserving color appearance of images projected on non-white surfaces</strong>
+                    J.-S. Liu, K.-T. Shih, and H. H. Chen, MIPS, Mar. 2015.
+                </div>
+                <div class="publication-item">
+                    <strong>Anti-aliasing for light field rendering</strong>
+                    A.-C. Chang, T.-P. Sung, K.-T. Shih, and H. H. Chen, IEEE ICME, Jul. 2014.
+                </div>
+                <div class="publication-item">
+                    <strong>Analysis of the effect of calibration error on light field super-resolution rendering</strong>
+                    K.-T. Shih, C.-Y. Hsu, H. H. Chen, IEEE ICASSP, May 2014.
+                </div>
+                <div class="publication-item">
+                    <strong>Color enhancement based on the anchoring theory</strong>
+                    K.-T. Shih and H. H. Chen, IEEE Multimedia Signal Processing Workshop (MMSP), Sept. 2013.
+                </div>
+                <div class="publication-item">
+                    <strong>Color enhancement for portable LCD displays in low-power mode</strong>
+                    K.-T. Shih, T.-H. Huang, and H. H. Chen, Proc. SPIE Conf. 8135, Aug. 2011.
+                </div>
+            </div>
+        </section>
+
+        <!-- Honors -->
+        <section>
+            <h2>Honors & Awards</h2>
+            <ul>
+                <li>108年度博士後研究人員學術研究獎 (2020)</li>
+                <li>107年度績優研發替代役役男 (2019)</li>
+                <li>第二屆台灣車客松最佳創客獎 (2019)</li>
+                <li>Best Demo Paper Award, IEEE ICME (2018)</li>
+                <li>Ph.D. Dissertation Award, IPPR (2017)</li>
+                <li>Best Demo Award, IEEE ICME (2015)</li>
+                <li>Technical Innovation Award, IPPR (2015)</li>
+            </ul>
+        </section>
+
+        <!-- Patents -->
+        <section>
+            <h2>Patents</h2>
+            <ul>
+                <li><strong>US 11947134B2:</strong> Device of Generating 3D Light-Field Image (Apr 2024)</li>
+                <li><strong>US 9367905:</strong> Method and System of Enhancing a Backlight-Scaled Image (Jun 2016)</li>
+                <li><strong>US Patent Pending:</strong> Image processing system and method</li>
+            </ul>
+        </section>
+
+    </main>
+
 </body>
 </html>
